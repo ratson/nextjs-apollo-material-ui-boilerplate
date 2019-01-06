@@ -7,6 +7,10 @@
   },
   "dependencies": {
     "@material-ui/core": "^3.8.1",
+    "apollo-boost": "^0.1.23",
+    "apollo-server": "^2.3.1",
+    "apollo-server-koa": "^2.3.1",
+    "graphql": "^14.0.2",
     "jss": "^9.8.7",
     "koa": "^2.6.2",
     "koa-router": "^7.4.0",
