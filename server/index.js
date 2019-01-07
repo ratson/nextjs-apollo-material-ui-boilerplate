@@ -3,6 +3,8 @@ const Koa = require('koa')
 const next = require('next')
 const Router = require('koa-router')
 const { ApolloServer } = require('apollo-server-koa')
+const compression = require('compression')
+const koaConnect = require('koa-connect')
 
 const schema = require('./schema')
 
@@ -23,6 +25,8 @@ const graphQLServer = new ApolloServer({
 app.prepare().then(() => {
   const server = new Koa()
   const router = new Router()
+
+  server.use(koaConnect(compression()))
 
   graphQLServer.applyMiddleware({
     app: server,
