@@ -45,7 +45,7 @@ const Counter = () => (
         <>
           <IncrementButton>{data.counter.count}</IncrementButton>
           <p>
-            <Link to="/">Home</Link>
+            <Link href="/">Home</Link>
           </p>
         </>
       )

@@ -8,9 +8,11 @@
   "dependencies": {
     "@material-ui/core": "^3.8.1",
     "apollo-boost": "^0.1.23",
+    "apollo-link-schema": "^1.1.4",
     "apollo-server": "^2.3.1",
     "apollo-server-koa": "^2.3.1",
     "graphql": "^14.0.2",
+    "graphql-tools": "^4.0.3",
     "isomorphic-unfetch": "^3.0.0",
     "jss": "^9.8.7",
     "koa": "^2.6.2",
