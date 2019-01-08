@@ -5,12 +5,29 @@ import { MuiThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import JssProvider from 'react-jss/lib/JssProvider'
 import { ApolloProvider } from 'react-apollo'
-import { IntlProvider } from 'react-intl'
+import { IntlProvider, addLocaleData } from 'react-intl'
+import zh from 'react-intl/locale-data/zh'
 
 import getPageContext from 'app/src/getPageContext'
 import withApolloClient from 'app/lib/with-apollo-client'
 
+addLocaleData(zh)
+
+const defaultLocale = 'zh-Hant-HK'
+
 class MyApp extends App {
+  static async getInitialProps({ Component, router, ctx }) {
+    const pageProps = Component.getInitialProps
+      ? await Component.getInitialProps(ctx)
+      : {}
+
+    const locale = defaultLocale
+    const { default: messages } = await import(`app/lang/${locale}.json`)
+    const initialNow = Date.now()
+
+    return { pageProps, locale, messages, initialNow }
+  }
+
   constructor() {
     super()
     this.pageContext = getPageContext()
@@ -25,10 +42,22 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps, apolloClient } = this.props
+    const {
+      Component,
+      pageProps,
+      apolloClient,
+      locale,
+      messages,
+      initialNow,
+    } = this.props
     return (
       <Container>
-        <IntlProvider locale="en">
+        <IntlProvider
+          locale={locale}
+          messages={messages}
+          defaultLocale={defaultLocale}
+          initialNow={initialNow}
+          textComponent={React.Fragment}>
           <ApolloProvider client={apolloClient}>
             <Head>
               <title>My page</title>
