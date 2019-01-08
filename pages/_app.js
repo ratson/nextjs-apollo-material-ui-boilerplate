@@ -4,10 +4,10 @@ import Head from 'next/head'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import JssProvider from 'react-jss/lib/JssProvider'
-import getPageContext from '../src/getPageContext'
 import { ApolloProvider } from 'react-apollo'
 
-import withApolloClient from '../lib/with-apollo-client'
+import getPageContext from 'app/src/getPageContext'
+import withApolloClient from 'app/lib/with-apollo-client'
 
 class MyApp extends App {
   constructor() {
