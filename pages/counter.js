@@ -5,6 +5,8 @@ import Button from '@material-ui/core/Button'
 import Link from 'next/link'
 import { FormattedMessage } from 'react-intl'
 
+import { IntlConsumer } from 'app/lib/intl'
+
 const GET_COUNTER = gql`
   {
     counter {
@@ -31,14 +33,19 @@ const IncrementButton = ({ children }) => (
       },
     ]}>
     {(increment, { data }) => (
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => {
-          increment()
-        }}>
-        {data ? data.increment.count : children}
-      </Button>
+      <IntlConsumer>
+        {({ switchToLocale }) => (
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              increment()
+              switchToLocale('zh-Hant-HK')
+            }}>
+            {data ? data.increment.count : children}
+          </Button>
+        )}
+      </IntlConsumer>
     )}
   </Mutation>
 )

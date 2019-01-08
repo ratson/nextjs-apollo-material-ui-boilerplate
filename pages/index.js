@@ -42,9 +42,6 @@ class Index extends React.Component {
     const { classes, data } = this.props
     const { open } = this.state
 
-    const name = 'Eric'
-    const unreadCount = 1000
-
     return (
       <div className={classes.root}>
         <Dialog open={open} onClose={this.handleClose}>
