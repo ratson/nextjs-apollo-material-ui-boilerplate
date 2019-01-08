@@ -63,7 +63,9 @@ const Counter = () => (
             />
           </p>
           <p>
-            <Link href="/">Home</Link>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
           </p>
         </>
       )
