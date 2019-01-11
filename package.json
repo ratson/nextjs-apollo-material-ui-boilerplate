@@ -29,6 +29,7 @@
     "react-jss": "^8.6.1"
   },
   "devDependencies": {
-    "babel-plugin-react-intl": "^3.0.1"
+    "babel-plugin-react-intl": "^3.0.1",
+    "fs-extra": "^7.0.1"
   }
 }
