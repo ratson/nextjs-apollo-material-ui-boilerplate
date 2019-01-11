@@ -47,7 +47,6 @@ class MyDocument extends Document {
     if (pageContext) {
       css = pageContext.sheetsRegistry.toString()
     }
-
     return {
       ...page,
       pageContext,
@@ -66,10 +65,15 @@ class MyDocument extends Document {
   }
 
   render() {
-    const { pageContext } = this.props
+    const {
+      pageContext,
+      __NEXT_DATA__: {
+        props: { locale },
+      },
+    } = this.props
 
     return (
-      <html lang="en" dir="ltr">
+      <html lang={locale} dir="ltr">
         <Head>
           <meta charSet="utf-8" />
           {/* Use minimum-scale=1 to enable GPU rasterization */}
