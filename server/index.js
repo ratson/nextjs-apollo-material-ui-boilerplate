@@ -1,12 +1,11 @@
-'use strict'
-const Koa = require('koa')
-const next = require('next')
-const Router = require('koa-router')
-const { ApolloServer } = require('apollo-server-koa')
-const compression = require('compression')
-const koaConnect = require('koa-connect')
+import Koa from 'koa'
+import next from 'next'
+import Router from 'koa-router'
+import { ApolloServer } from 'apollo-server-koa'
+import compression from 'compression'
+import koaConnect from 'koa-connect'
 
-const schema = require('./schema')
+import schema from './schema'
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'

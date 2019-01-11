@@ -1,5 +1,5 @@
-const { SchemaLink } = require('apollo-link-schema')
+import { SchemaLink } from 'apollo-link-schema'
 
-const schema = require('./schema')
+import schema from './schema'
 
-module.exports = new SchemaLink({ schema })
+export default new SchemaLink({ schema })

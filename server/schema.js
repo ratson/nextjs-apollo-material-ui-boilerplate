@@ -1,5 +1,5 @@
-const { gql } = require('apollo-server-koa')
-const { makeExecutableSchema } = require('graphql-tools')
+import { gql } from 'apollo-server-koa'
+import { makeExecutableSchema } from 'graphql-tools'
 
 const typeDefs = gql`
   type Greeting {
@@ -36,4 +36,4 @@ const resolvers = {
   },
 }
 
-module.exports = makeExecutableSchema({ typeDefs, resolvers })
+export default makeExecutableSchema({ typeDefs, resolvers })
