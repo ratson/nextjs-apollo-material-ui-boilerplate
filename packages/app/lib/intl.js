@@ -9,7 +9,7 @@ addLocaleData([...en, ...zh])
 export const defaultLocale = 'en'
 
 export const loadMessages = async locale => {
-  const { default: messages } = await import(`app/lang/${locale}.json`)
+  const { default: messages } = await import(`../lang/${locale}.json`)
   return messages
 }
 
