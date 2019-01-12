@@ -1,8 +1,9 @@
 'use strict'
+const withTM = require('next-plugin-transpile-modules')
 
-module.exports = {
+module.exports = withTM({
+  transpileModules: ['app', 'graphql-schema'],
   webpack(config, options) {
-    config.resolve.alias['app'] = __dirname
     return config
   },
-}
+})

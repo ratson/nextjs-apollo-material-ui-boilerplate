@@ -5,7 +5,7 @@ import { ApolloServer } from 'apollo-server-koa'
 import compression from 'compression'
 import koaConnect from 'koa-connect'
 
-import schema from './schema'
+import schema from 'graphql-schema'
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'

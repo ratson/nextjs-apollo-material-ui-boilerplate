@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "name": "graphql-schema",
+  "version": "0.0.0",
+  "dependencies": {
+    "graphql": "^14.0.2",
+    "graphql-tag": "^2.10.0",
+    "graphql-tools": "^4.0.3"
+  }
+}
